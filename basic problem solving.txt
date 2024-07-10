@@ -1,0 +1,276 @@
+// Print Many Hello World 
+#include <iostream>
+using namespace std;
+int main() {
+    for (int i = 0; i < 1000; ++i) {
+        cout << "Hello World\n";
+    }
+    return 0;
+}
+______....____
+//B - The missing number
+#include <iostream>
+using namespace std;
+int main() {
+    int expectedSum = (100 * 101) / 2;
+    int sum = 0;
+    int num;
+    for (int i = 0; i < 99; ++i) {
+        cin >> num;
+        sum += num;
+    }
+    int missingNumber = expectedSum - sum;
+    cout << missingNumber <<endl;
+    return 0;
+}
+//F - Squares sum 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    int sum = 0;
+    for(int i = 1; i <= N; ++i) {
+        sum += i * i;
+    }
+
+    cout << sum << endl;
+
+    return 0;
+}
+//G - Cubes sum
+#include <iostream>
+using namespace std;
+int main() {
+    int N;
+    cin >> N;
+    int sum = 0;
+    for(int i = 1; i <= N; ++i) {
+        sum += i * i * i;
+    }
+    cout << sum << endl;
+
+    return 0;
+}
+//L - Print multiplication table
+#include <iostream>
+
+using namespace std;
+
+void printMultiplicationTable(int N) {
+    for (int i = 1; i <= 10; ++i) {
+        cout << N << " * " << i << " = " << N * i << endl;
+    }
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    printMultiplicationTable(N);
+
+    return 0;
+}
+//I - Compute fibonacci number 
+#include <iostream>
+#include <vector>
+using namespace std;
+int fibonacci(int N) {
+    vector<int> fib(N + 1);
+    fib[0] = 0;
+    fib[1] = 1;
+    for (int i = 2; i <= N; ++i) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    return fib[N];
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    cout << fibonacci(N) << endl;
+
+    return 0;
+}
+//J - Check Armstrong number 
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+bool isArmstrong(int N) {
+    int originalNumber = N;
+    int numDigits = log10(N) + 1;
+    int sum = 0;
+
+    while (N > 0) {
+        int digit = N % 10; 
+        sum += pow(digit, numDigits); 
+        N /= 10; 
+    }
+
+    return sum == originalNumber; 
+}
+
+int main() {
+    int N;
+    cin >> N;
+
+    if (isArmstrong(N)) {
+        cout << "Yes" << endl;
+    } else {
+        cout << "No" << endl;
+    }
+
+    return 0;
+}
+//H - Compute a power b. 
+#include <iostream>
+using namespace std;
+long long int power(int a, int b) {
+    if (b == 0)
+        return 1;
+    return a * power(a, b - 1);
+}
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    cout << power(a, b) << endl;
+    
+    return 0;
+}
+//C - Number reverse 
+#include <iostream>
+using namespace std;
+int main() {
+    long long int N;
+    cin >> N;
+    long long int reversedNumber = 0;
+    while (N != 0) {
+        reversedNumber = reversedNumber * 10 + (N % 10);
+        N /= 10;
+    }
+
+    cout << reversedNumber << endl;
+
+    return 0;
+}
+//Z - Swapping Two Numbers 
+#include <iostream>
+using namespace std;
+//swaping two numbers
+int main() {
+    int x, y;
+    while (true) {
+        cin >> x >> y;
+        if (x == 0 && y == 0) {
+            break;
+        }
+        if (x > y) {
+            cout << y << " " << x << endl;
+        } else {
+            cout << x << " " << y << endl;
+        }
+    }
+
+    return 0;
+}
+//N - Sum of all odd elements 
+#include <iostream>
+using namespace std;
+int main() {
+    int N;
+    cin >> N;
+    int arr[N];
+    for (int i = 0; i < N; ++i) {
+        cin >> arr[i];
+    }
+    int sum = 0;
+    for (int i = 0; i < N; ++i) {
+        if (arr[i] % 2 != 0) {
+            sum += arr[i];
+        }
+    }
+    cout << sum << endl;
+    return 0;
+}
+//A - Small, Large, or Equal 
+#include <iostream>
+using namespace std;
+int main()
+{
+    short int a,b;
+    cin>>a>>b;
+    if(a<b)
+    cout<<"a < b"<<endl;
+    else if(a>b)
+    cout<<"a > b"<<endl;
+    else
+    cout<<"a == b"<<endl; 
+    return 0;
+}
+//Y - Print Test Cases 
+#include <iostream>
+using namespace std;
+int main() {
+    int x, caseNumber = 1;
+
+    while (true) {
+        cin >> x;
+        if (x == 0) {
+            break;
+        }
+        cout << "Case " << caseNumber << ": " << x << endl;
+        caseNumber++;
+    }
+    return 0;
+}
+//E - Natural numbers sum 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    int sum = (N * (N + 1)) / 2;
+
+    cout << sum << endl;
+
+    return 0;
+}
+//G - Cubes sum 
+#include <iostream>
+using namespace std;
+int main() {
+    int N;
+    cin >> N;
+    int sum = 0;
+    for (int i = 1; i <= N; ++i) {
+        sum += i * i * i;
+    }
+    cout << sum << endl;
+
+    return 0;
+}
+//F - Squares sum 
+#include <iostream>
+using namespace std;
+int main() {
+    int N;
+    cin >> N;
+    int sum_of_squares = (N * (N + 1) * (2 * N + 1)) / 6;
+    cout << sum_of_squares << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
